@@ -1,7 +1,10 @@
-const puppeteer = require("puppeteer");
-require("dotenv").config();
+import puppeteer from "puppeteer";
+import dotenv from "dotenv";
 
-const scrapeLogic = async (res) => {
+dotenv.config();
+
+
+export const scrapeLogic = async (res) => {
   const browser = await puppeteer.launch({
     args: [
       "--disable-setuid-sandbox",
@@ -13,6 +16,8 @@ const scrapeLogic = async (res) => {
       process.env.NODE_ENV === "production"
         ? process.env.PUPPETEER_EXECUTABLE_PATH
         : puppeteer.executablePath(),
+
+    headless: false,
   });
   try {
     const page = await browser.newPage();
@@ -48,4 +53,4 @@ const scrapeLogic = async (res) => {
   }
 };
 
-module.exports = { scrapeLogic };
+scrapeLogic();

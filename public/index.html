@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scraping Bot</title>
+</head>
+<body>
+  <h1>Company Scraping Bot</h1>
+  <form action="/scrape" method="POST">
+    <label for="companyNames">Enter Company Names (comma-separated):</label>
+    <br>
+    <textarea id="companyNames" name="companyNames" rows="5" cols="50" required></textarea>
+    <br><br>
+    <label for="companyLocation">Enter Location:</label>
+    <br>
+    <input type="text" id="companyLocation" name="companyLocation" required>
+    <br><br>
+    <button type="submit">Start Scraping</button>
+  </form>
+</body>
+</html>
